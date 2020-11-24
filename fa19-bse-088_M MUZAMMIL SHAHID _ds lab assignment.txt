@@ -1,0 +1,115 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fa19.bse.pkg088ds.assg;
+
+/**
+ *
+ * @author Muzammil
+ */
+public class Fa19Bse088DSAssg {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Queue queue = new Queue();
+      
+ queue.enqueue(5);
+ queue.dequeue();
+ queue.enqueue(7);
+ queue.enqueue(8);
+ queue.enqueue(2);
+ queue.dequeue();
+ queue.enqueue(1);
+ queue.dequeue();
+ queue.enqueue(22);
+ queue.enqueue(11);
+ queue.dequeue();
+ queue.enqueue(33);
+ queue.enqueue(232);
+ }
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fa19.bse.pkg088ds.assg;
+
+/**
+ *
+ * @author Muzammil
+ */
+class Queue {
+   
+         private Node front, rear; 
+ private int currentSize; 
+ public Queue()
+         {
+    front = null;
+ rear = null;
+ currentSize = 0;
+ }
+ 
+ public boolean isEmpty()
+ {
+ return (currentSize == 0);
+ }
+ 
+ 
+ public int dequeue()
+ {
+ int data = front.data;
+ front = front.next;
+ if (isEmpty()) 
+ {
+ rear = null;
+ }
+ currentSize--;
+ System.out.println(data+ " removed from the queue");
+ return data;
+ }
+ 
+ 
+ public void enqueue(int data)
+ {
+ Node nRear = rear;
+ rear = new Node();
+ rear.data = data;
+ rear.next = null;
+ if (isEmpty()) 
+ {
+ front = rear;
+ }
+ else 
+ {
+ nRear.next = rear;
+ }
+ currentSize++;
+ System.out.println(data+ " added to the queue");
+    
+}}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fa19.bse.pkg088ds.assg;
+
+/**
+ *
+ * @author Muzammil
+ */
+class Node {
+     int data;
+ Node next;
+    
+}
+
+    
+    
+
